@@ -77,11 +77,6 @@ public class CustomerServiceImpl implements CustomerService {
   }
 
   @Override
-  public Mono<CustomerResponse> update2(CustomerRequest request, Long id) {
-    return null;
-  }
-
-  @Override
   public Mono<Void> delete(Long id) {
     return repository.findById(id)
       .switchIfEmpty(Mono.error(new NotFoundException(NOT_FOUND)))

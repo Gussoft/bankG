@@ -12,7 +12,6 @@ public interface CustomerService {
   Mono<CustomerResponse> findByDni(String dni);
   Mono<CustomerResponse> save(CustomerRequest request);
   Mono<CustomerResponse> update(CustomerRequest request, Long id);
-  Mono<CustomerResponse> update2(CustomerRequest request, Long id);
   Mono<Void> delete(Long id);
 
 }
