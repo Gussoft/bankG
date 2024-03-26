@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  java_app:
+    container_name: java_app
+    image: pee-java-app:1.0.0
+    build: .
+    ports:
+      - 9071:9071
+    environment:
+      - SPRING_R2DBC_URL=r2dbc:postgresql://java_db:5432/postgres?serverTimezone=America/Lima
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=root
+    depends_on:
+      - java_db
+  java_db:
+    container_name: java_db
+    image: postgres:12
+    restart: always
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+

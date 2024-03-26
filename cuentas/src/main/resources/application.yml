@@ -1,0 +1,26 @@
+server:
+  port: 9071
+spring:
+  application:
+    name: cuentas-service
+  r2dbc:
+    username: postgres
+    password: root
+    url: r2dbc:postgresql://localhost:5432/postgres?serverTimezone=America/Lima
+  flyway:
+    user: postgres
+#    locations: classpath:/db/migration
+    password: root
+    schemas: bankg
+    baseline-on-migrate: true
+    url: jdbc:postgresql://localhost:5432/postgres
+config:
+  customers:
+    endpoint: http://localhost:9070/api/v1/customers
+
+springdoc:
+  api-docs:
+    path: index
+  swagger-ui:
+    path: test
+    enabled: true

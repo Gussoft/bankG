@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS bankg.customer (
+    id BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(20) NOT NULL,
+    age INTEGER NOT NULL,
+    dni VARCHAR(8) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    phone VARCHAR(12) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    state VARCHAR(20) NOT NULL
+    );
